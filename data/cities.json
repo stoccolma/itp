@@ -1,0 +1,32 @@
+{
+  "palermo": {
+    "slug": "palermo",
+    "name": "Palermo",
+    "intro": "Sun, noise, and history in the same breath. Markets spill into Byzantine mosaics, and lunch stretches into twilight."
+  },
+  "agrigento": {
+    "slug": "agrigento",
+    "name": "Agrigento",
+    "intro": "Temples of stone above the orchards. The Greeks knew exactly where to put their columns—where the light falls longest."
+  },
+  "noto": {
+    "slug": "noto",
+    "name": "Noto",
+    "intro": "Honey-colored baroque dream. Every balcony curves like a smile, every church facade argues with gravity and wins."
+  },
+  "siracusa": {
+    "slug": "siracusa",
+    "name": "Siracusa",
+    "intro": "Marble and sea arguing about who came first. Ortygia whispers back through narrow alleys that time is a loop, not a line."
+  },
+  "catania": {
+    "slug": "catania",
+    "name": "Catania",
+    "intro": "Smoke from Etna curling into the espresso air. Lava-black baroque, fish markets at dawn, and a city that's been reborn more times than it can count."
+  },
+  "taormina": {
+    "slug": "taormina",
+    "name": "Taormina",
+    "intro": "Terraces of light, theater perched on the edge of myth. The Greeks put it here so you'd understand what 'view' really means."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "noto",
+  "images": [
+    {
+      "id": "sample-featured-001",
+      "src": "/areas/noto/hero.jpg",
+      "alt": "Baroque cathedral in Noto with golden stone facade",
+      "caption": "The stunning Cathedral of San Nicolò dominates Noto's main square",
+      "credit": "Sample Image",
+      "featured": true,
+      "order": 0
+    },
+    {
+      "id": "sample-gallery-001",
+      "src": "/areas/noto/street.jpg",
+      "alt": "Narrow street in Noto with baroque balconies",
+      "caption": "Historic street showcasing Noto's famous baroque architecture",
+      "credit": "Sample Image",
+      "featured": false,
+      "order": 1
+    }
+  ],
+  "updatedAt": "2025-10-24T12:00:00.000Z"
+}

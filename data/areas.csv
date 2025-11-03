@@ -1,0 +1,7 @@
+id,name,lat,lon,region,tags,area_type
+noto,Noto,36.8919,15.0708,Sicily,baroque,architecture,unesco,city
+palermo,Palermo,38.1157,13.3615,Sicily,market,street food,history,city
+taormina,Taormina,37.8526,15.2879,Sicily,beach,ancient ruins,views,city
+syracuse,Syracuse,37.0755,15.2866,Sicily,ancient,archaeology,seaside,city
+agrigento,Agrigento,37.3109,13.5765,Sicily,valley of temples,ancient,unesco,city
+catania,Catania,37.5079,15.0830,Sicily,volcano,market,baroque,city

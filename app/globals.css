@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/opendyslexic@1.0.3/OpenDyslexic.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 2025 Color Palette */
+:root {
+  --sand: #DEDED1;
+  --linen: #C5C7BC;
+  --moss: #B6AE9F;
+  --sun: #FBF3D1;
+  --black: #000000;
+  --white: #FFFFFF;
+  
+  /* Unified Surface Tokens - LIGHT DEFAULT */
+  --paper: #faf7f2;
+  --ink: #1e1b18;
+  --paper-accent: #f1eadf;
+  --grain-opacity: .06;
+  --accent: #e5a64b;
+  --card: color-mix(in oklab, var(--paper) 96%, black 4%);
+  --line: color-mix(in oklab, var(--ink) 10%, transparent);
+  
+  /* Legacy Editorial Variables (for gradual migration) */
+  --editorial-bg: var(--paper);
+  --editorial-text: var(--ink);
+  --editorial-accent: var(--accent);
+}
+
+/* LIGHT — default paper (explicit) */
+[data-theme="light"] {
+  --paper: #faf7f2;
+  --ink: #1e1b18;
+  --accent: #e5a64b;
+  --paper-accent: #f1eadf;
+  --grain-opacity: .06;
+  --card: color-mix(in oklab, var(--paper) 96%, black 4%);
+  --line: color-mix(in oklab, var(--ink) 10%, transparent);
+}
+
+/* DARK — only when toggled */
+[data-theme="dark"] {
+  --sand: #B0A995;
+  --linen: #9C9E91;
+  --moss: #7F776C;
+  --sun: #D5CBAA;
+  --black: #FFFFFF;
+  --white: #000000;
+  
+  --paper: #11100f;
+  --ink: #f4efe9;
+  --accent: #e5a64b;
+  --paper-accent: #1a1917;
+  --grain-opacity: .08;
+  --card: color-mix(in oklab, var(--paper) 94%, white 6%);
+  --line: color-mix(in oklab, var(--ink) 12%, transparent);
+}
+
+/* Card Component */
+.card {
+  @apply rounded-2xl border border-[var(--linen)] bg-[var(--sand)] shadow-sm;
+}
+
+:root {
+  --terracotta: #bfa094;
+  --gold: #d4af37;
+  --sage: #5f7362;
+  --espresso: #2c2420;
+  --cream: #fdf8f6;
+}
+
+body {
+  font-family: 'Inter', 'Lora', Georgia, serif;
+}
+
+body.dyslexia-font {
+  font-family: 'OpenDyslexic', 'Inter', system-ui, sans-serif;
+}
+
+/* Editorial Typography Scale */
+.font-heading {
+  font-family: 'Lora', Georgia, serif; /* TODO: Replace with Canela when available */
+  font-weight: 400;
+}
+
+.font-body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+
+/* Unified Paper Surface with Grain */
+.bg-paper {
+  background-color: var(--paper);
+  background-image: radial-gradient(circle at 1px 1px, rgba(0,0,0,var(--grain-opacity)) 1px, transparent 1px);
+  background-size: 12px 12px;
+}
+
+@media (max-width: 640px) {
+  .bg-paper {
+    background-size: 14px 14px;
+  }
+}
+
+/* Section divider line */
+.section-divider {
+  border-top: 1px solid color-mix(in oklab, var(--ink) 9%, transparent);
+}
+
+/* Content wrapper */
+.container-editorial {
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Navigation link styles */
+.nav-link {
+  color: var(--ink);
+  text-underline-offset: 4px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--editorial-accent);
+}
+
+.nav-link[aria-pressed="true"] {
+  color: var(--editorial-accent);
+}
+
+.nav-link:focus-visible {
+  outline: 2px solid var(--editorial-accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+body.text-only *:not(nav):not(nav *) {
+  background-image: none !important;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-terracotta-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-terracotta-400 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-terracotta-500;
+}
+
+
+/* Card shadows for depth */
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(44, 36, 32, 0.1), 
+              0 2px 4px -1px rgba(44, 36, 32, 0.06);
+}
+
+.card-shadow:hover {
+  box-shadow: 0 10px 15px -3px rgba(44, 36, 32, 0.1), 
+              0 4px 6px -2px rgba(44, 36, 32, 0.05);
+}
+
+/* Disable map interactions during drag */
+[data-dragging="true"] #map-container {
+  pointer-events: none;
+}
+
+/* Print Page Styles */
+.print-container {
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: white;
+  color: #000;
+}
+
+.print-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 3px solid #18181b;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.print-logo {
+  width: 140px;
+  height: auto;
+}
+
+.print-title {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+  color: #18181b;
+}
+
+.print-slogan {
+  font-size: 14px;
+  font-style: italic;
+  color: #52525b;
+  margin: 0;
+}
+
+.print-meta {
+  margin-bottom: 30px;
+  padding: 15px;
+  background: #f4f4f5;
+  border-radius: 8px;
+}
+
+.print-subtitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #18181b;
+}
+
+.print-meta-details {
+  font-size: 14px;
+  color: #52525b;
+  display: flex;
+  gap: 20px;
+}
+
+.print-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  font-size: 13px;
+}
+
+.print-table thead {
+  background: #18181b;
+  color: white;
+}
+
+.print-table th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.print-row {
+  border-bottom: 1px solid #e4e4e7;
+}
+
+.print-sidequest-row {
+  background: #fafafa;
+}
+
+.print-time {
+  padding: 16px 12px;
+  font-weight: 600;
+  color: #18181b;
+  vertical-align: top;
+}
+
+.print-sidequest-row .print-time {
+  font-weight: 500;
+  color: #52525b;
+  font-size: 12px;
+}
+
+.print-poi-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.print-name {
+  font-weight: 600;
+  font-size: 14px;
+  color: #18181b;
+  margin-bottom: 2px;
+}
+
+.print-badge {
+  font-size: 11px;
+  color: #71717a;
+  font-style: italic;
+  display: inline-block;
+  padding: 2px 6px;
+  background: #e4e4e7;
+  border-radius: 4px;
+}
+
+.print-slot-title {
+  font-size: 12px;
+  color: #71717a;
+  font-style: italic;
+}
+
+.print-empty {
+  padding: 16px 12px;
+  color: #71717a;
+  font-style: italic;
+  vertical-align: top;
+}
+
+.print-details {
+  padding: 16px 12px;
+  vertical-align: top;
+}
+
+.print-address {
+  margin-bottom: 8px;
+  color: #52525b;
+}
+
+.print-note {
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+.print-distance {
+  font-size: 11px;
+}
+
+.print-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.print-link {
+  color: #059669;
+  text-decoration: none;
+}
+
+.print-link-website {
+  color: #7c3aed;
+}
+
+.print-footer {
+  border-top: 2px solid #e4e4e7;
+  padding-top: 20px;
+  margin-top: 40px;
+  font-size: 11px;
+  color: #71717a;
+  text-align: center;
+}
+
+.print-footer-brand {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.print-footer-tagline {
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+.print-footer-privacy {
+  font-size: 10px;
+  color: #a1a1aa;
+}
+
+/* Print Media Queries */
+@page {
+  size: A4;
+  margin: 10mm;
+}
+
+@media print {
+  .print-container {
+    padding: 0;
+    background: white !important;
+  }
+  
+  body {
+    background: white !important;
+  }
+  
+  .print-header {
+    border-bottom-color: #000;
+  }
+  
+  .print-meta {
+    background: #f5f5f5 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .print-table thead {
+    background: #000 !important;
+    color: #fff !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .print-sidequest-row {
+    background: #f9f9f9 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .print-row {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  
+  .print-table thead {
+    display: table-header-group;
+  }
+  
+  .print-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10mm 15mm;
+    background: white;
+  }
+  
+  /* Ensure links are visible */
+  a {
+    text-decoration: underline;
+  }
+  
+  /* Remove box shadows in print */
+  * {
+    box-shadow: none !important;
+  }
+}
